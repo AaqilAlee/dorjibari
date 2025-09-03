@@ -41,8 +41,8 @@ for label in checkbox_labels:
 
 
 
-# -------------------- Adjust Price Slider --------------------
-# Wait for sliders
+
+# price filter Wait for sliders
 min_slider = wait.until(
     EC.presence_of_element_located((By.CSS_SELECTOR, "input.filter__price_min"))
 )
@@ -57,7 +57,7 @@ actions.click_and_hold(min_slider).move_by_offset(50, 0).release().perform()
 # Move max slider (to left, decrease value)
 actions.click_and_hold(max_slider).move_by_offset(-50, 0).release().perform()
 
-# -------------------- Click Apply Button --------------------
+# Click Apply Button
 apply_button = driver.find_element(By.ID, "filter__price--apply")
 driver.execute_script("arguments[0].click();", apply_button)
 
